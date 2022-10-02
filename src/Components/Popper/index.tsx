@@ -1,36 +1,23 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { Popper } from "./Popper";
 
-export function PopperContainer() {
-  const [text, setText] = React.useState(false);
-  const [titleOne, setTitleOne] = React.useState(false);
-  const [titleTwo, setTitleTwo] = React.useState(false);
-  const [titleThree, setTitleThree] = React.useState(false);
-  const [bullet, setBullet] = React.useState(false);
-
-  const onClickSelectText = () => {
-    setText(!text);
-  };
-  const onClickSelectTitleOne = () => {
-    setTitleOne(!titleOne);
-  };
-  const onClickSelectTitleTwo = () => {
-    setTitleTwo(!titleTwo);
-  };
-  const onClickSelectTitleThree = () => {
-    setTitleThree(!titleThree);
-  };
-  const onClickSelectBullet = () => {
-    setBullet(!bullet);
-  };
-
-  return (
-    <Popper
-      onClickSelectText={onClickSelectText}
-      onClickSelectTitleOne={onClickSelectTitleOne}
-      onClickSelectTitleTwo={onClickSelectTitleTwo}
-      onClickSelectTitleThree={onClickSelectTitleThree}
-      onClickSelectBullet={onClickSelectBullet}
-    />
-  );
+interface PropType {
+  setInputValue: Dispatch<SetStateAction<string>>;
+  setPopperOpen: Dispatch<SetStateAction<boolean>>;
+  setSelectedMenu: Dispatch<SetStateAction<string>>;
 }
+
+export const PopperContainer = (props: PropType) => {
+  const onClickMenu = (event: React.MouseEvent<HTMLElement>) => {
+    props.setInputValue("");
+    if (event.target instanceof Element) {
+      props.setSelectedMenu(event.target.id);
+    }
+    if (event.target instanceof Element) {
+      console.log(event.target.id);
+    }
+    props.setPopperOpen(false);
+  };
+
+  return <Popper onClickMenu={onClickMenu} />;
+};

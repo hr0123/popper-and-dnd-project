@@ -1,12 +1,18 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled("div")(() => ({
+  width: "100%",
+}));
+
+export const Box = styled("div")(() => ({
   width: 300,
   height: 350,
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
-  border: "1px solid gray",
+  border: "none",
+  borderRadius: 5,
+  boxShadow: "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);",
   padding: 16,
   margin: 4,
 }));

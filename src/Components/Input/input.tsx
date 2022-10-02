@@ -1,36 +1,30 @@
-import React from "react";
+import {
+  BulletIcon,
+  Content,
+  StyledInput,
+  TitleInput,
+  Wrapper,
+} from "./Styles";
 
-export const Input = (props: { setPopperOpen: (arg0: boolean) => void }) => {
-  const [inputValue, setInputValue] = React.useState("");
-  const [typed, setTyped] = React.useState(false);
-
-  const onChangeInput = (event: any) => {
-    setInputValue(event.target.value);
-    if (event?.target.value === "/") {
-      props.setPopperOpen(true);
-    } else if (!event?.target.value) {
-      props.setPopperOpen(false);
-      setTyped(true);
-    }
-  };
-
+interface PropType {
+  inputValue: string;
+  onChangeInput: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  selectedMenu: string;
+}
+export const Input = (props: PropType) => {
   return (
-    <>
-      {typed ? (
-        <div>{inputValue}</div>
-      ) : (
-        <input
+    <Wrapper>
+      <TitleInput type="text" placeholder="Untitled" />
+      <Content>
+        {props.selectedMenu === "리스트" ? <BulletIcon>•</BulletIcon> : null}
+        <StyledInput
           type="text"
-          onChange={onChangeInput}
-          style={{
-            border: "1px solid gray",
-            width: 300,
-            height: 30,
-            fontSize: 24,
-            padding: 4,
-          }}
+          value={props.inputValue}
+          placeholder={props.selectedMenu}
+          onChange={props.onChangeInput}
+          selectedMenu={props.selectedMenu}
         />
-      )}
-    </>
+      </Content>
+    </Wrapper>
   );
 };
