@@ -31,13 +31,6 @@ export const Row = styled("div")(() => ({
   },
 }));
 
-export const Icon = styled("div")(() => ({
-  marginRight: 8,
-  width: "20%",
-  height: "100%",
-  border: "1px solid gray",
-}));
-
 export const ContentWrapper = styled("div")(() => ({
   width: "100%",
   height: "100%",

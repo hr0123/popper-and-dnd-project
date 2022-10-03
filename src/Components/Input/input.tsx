@@ -11,6 +11,7 @@ interface PropType {
   onChangeInput: (event: React.ChangeEvent<HTMLInputElement>) => void;
   selectedMenu: string;
 }
+
 export const Input = (props: PropType) => {
   return (
     <Wrapper>

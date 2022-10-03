@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
 
+interface PropType {
+  selectedMenu: string;
+}
+
 export const Wrapper = styled("div")(() => ({
   width: "100%",
   display: "flex",
@@ -9,7 +13,6 @@ export const Wrapper = styled("div")(() => ({
 export const TitleInput = styled("input")(() => ({
   width: "100%",
   height: "100%",
-  backgroundColor: "green",
   fontSize: 42,
   fontWeight: 900,
   border: "none",
@@ -24,11 +27,10 @@ export const Content = styled("div")(() => ({
   alignItems: "center",
 }));
 
-export const StyledInput = styled("input")((props: any) => ({
+export const StyledInput = styled("input")((props: PropType) => ({
   // width: 300,
   width: "100%",
   height: "100%",
-  backgroundColor: "yellow",
   fontSize:
     props.selectedMenu === "Heading 1"
       ? 32

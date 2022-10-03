@@ -1,4 +1,5 @@
 import React from "react";
+import { DragAndDropContainer } from "../DragAndDrop";
 import { InputContainer } from "../Input";
 import { PopperContainer } from "../Popper";
 import { Container, Wrapper } from "./Styles";
@@ -13,6 +14,7 @@ export const NotionMenu = () => {
   return (
     <Container>
       <Wrapper>
+        <DragAndDropContainer />
         <InputContainer
           inputValue={inputValue}
           setInputValue={setInputValue}
