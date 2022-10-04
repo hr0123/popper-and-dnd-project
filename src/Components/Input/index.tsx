@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction } from "react";
-import { Input } from "./Input";
+import { Input } from "./input";
 
 interface PropType {
   inputValue: string;
