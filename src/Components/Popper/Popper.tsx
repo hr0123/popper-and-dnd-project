@@ -13,7 +13,7 @@ export const Popper = (props: PropType) => {
   return (
     <Wrapper>
       <Box>
-        <Row>
+        <Row onClick={props.onClickMenu}>
           <TextIcon
             style={{
               width: "20%",
@@ -25,13 +25,11 @@ export const Popper = (props: PropType) => {
             }}
           />
           <ContentWrapper>
-            <Title id='Type "/" for commands' onClick={props.onClickMenu}>
-              Text
-            </Title>
+            <Title id='Type "/" for commands'>Text</Title>
             <Subtitle>Just start writing with plain text.</Subtitle>
           </ContentWrapper>
         </Row>
-        <Row>
+        <Row onClick={props.onClickMenu}>
           <HeadingOneIcon
             style={{
               width: "20%",
@@ -43,13 +41,11 @@ export const Popper = (props: PropType) => {
             }}
           />
           <ContentWrapper>
-            <Title id="Heading 1" onClick={props.onClickMenu}>
-              Heading 1
-            </Title>
+            <Title id="Heading 1">Heading 1</Title>
             <Subtitle>Big section heading.</Subtitle>
           </ContentWrapper>
         </Row>
-        <Row>
+        <Row onClick={props.onClickMenu}>
           <HeadingTwoIcon
             style={{
               width: "20%",
@@ -61,13 +57,11 @@ export const Popper = (props: PropType) => {
             }}
           />
           <ContentWrapper>
-            <Title id="Heading 2" onClick={props.onClickMenu}>
-              Heading 2
-            </Title>
+            <Title id="Heading 2">Heading 2</Title>
             <Subtitle>Medium section heading.</Subtitle>
           </ContentWrapper>
         </Row>
-        <Row>
+        <Row onClick={props.onClickMenu}>
           <HeadingThreeIcon
             style={{
               width: "20%",
@@ -79,13 +73,11 @@ export const Popper = (props: PropType) => {
             }}
           />
           <ContentWrapper>
-            <Title id="Heading 3" onClick={props.onClickMenu}>
-              Heading 3
-            </Title>
+            <Title id="Heading 3">Heading 3</Title>
             <Subtitle>Small section heading.</Subtitle>
           </ContentWrapper>
         </Row>
-        <Row>
+        <Row onClick={props.onClickMenu}>
           <BulletListIcon
             style={{
               width: "20%",
@@ -97,9 +89,7 @@ export const Popper = (props: PropType) => {
             }}
           />
           <ContentWrapper>
-            <Title id="List" onClick={props.onClickMenu}>
-              Bulleted list
-            </Title>
+            <Title id="List">Bulleted list</Title>
             <Subtitle>Create a simple bulleted list.</Subtitle>
           </ContentWrapper>
         </Row>
