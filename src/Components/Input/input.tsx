@@ -17,7 +17,7 @@ export const Input = (props: PropType) => {
     <Wrapper>
       <TitleInput type="text" placeholder="Untitled" />
       <Content>
-        {props.selectedMenu === "리스트" ? <BulletIcon>•</BulletIcon> : null}
+        {props.selectedMenu === "List" ? <BulletIcon>•</BulletIcon> : null}
         <StyledInput
           type="text"
           value={props.inputValue}

@@ -11,12 +11,9 @@ interface PropType {
 export const InputContainer = (props: PropType) => {
   const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     props.setInputValue(event.target.value);
-    if (event.target.value.includes("/") === true) {
-      props.setPopperOpen(true);
-    } else if (event.target.value.includes("/")) {
-      props.setPopperOpen(false);
-      props.setInputValue("");
-    }
+    event.target.value.lastIndexOf("/") === event.target.value.length - 1
+      ? props.setPopperOpen(true)
+      : props.setPopperOpen(false);
   };
 
   return (
