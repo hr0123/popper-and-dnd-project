@@ -6,7 +6,7 @@ export const DragAndDropContainer = () => {
   const itemArr = ["item1", "item2", "item3", "item4", "item5", "item6"];
   const [list, setList] = React.useState(itemArr);
 
-  // 🔴only one item can be in the drag state => use useRef hook to keep track of the item being dragged by its position
+  // 1. only one item can be in the drag state => use useRef hook to keep track of the item being dragged by its position
   const dragItem = React.useRef<number>(0);
   const onDragStart = (
     event: React.DragEvent<HTMLDivElement>,
@@ -18,12 +18,12 @@ export const DragAndDropContainer = () => {
     }
   };
 
-  // 🔴while we drop the dragging item, we can see it’s shadow is going back to it’s original place. This can make user feel that dnd is not happening. We will avoid it
+  // 2. while we drop the dragging item, we can see it’s shadow is going back to it’s original place. This can make user feel that dnd is not happening. We will avoid it
   const onDragOver = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
   };
 
-  // 🔴find over which item our dragged item is hovering
+  // 3. find over which item our dragged item is hovering
   const dragOverItem = React.useRef<number>(0);
   const onDragEnter = (
     event: React.DragEvent<HTMLDivElement>,
@@ -35,7 +35,7 @@ export const DragAndDropContainer = () => {
     }
   };
 
-  // 🔴reshuffle the list when you finally drop the item over any of the other item
+  // 4. reshuffle the list when you finally drop the item over any of the other item
   const onDragEnd = (event: React.DragEvent<HTMLDivElement>) => {
     const copyListItems = [...list];
     const dragItemContent = copyListItems[dragItem.current];
