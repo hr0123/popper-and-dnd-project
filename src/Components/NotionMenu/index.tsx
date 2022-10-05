@@ -4,6 +4,10 @@ import { InputContainer } from "../Input";
 import { PopperContainer } from "../Popper";
 import { Container, Wrapper } from "./Styles";
 
+interface Type {
+  onClickOutSection: (event: React.MouseEvent<HTMLElement>) => void;
+}
+
 export const NotionMenu = () => {
   const [inputValue, setInputValue] = React.useState("");
   const [popperOpen, setPopperOpen] = React.useState(false);
@@ -11,8 +15,12 @@ export const NotionMenu = () => {
     'Type "/" for commands'
   );
 
+  const onClickOutSection = () => {
+    setPopperOpen(false);
+  };
+
   return (
-    <Container>
+    <Container onClick={onClickOutSection}>
       <Wrapper>
         <DragAndDropContainer />
         <InputContainer

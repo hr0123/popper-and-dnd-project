@@ -13,9 +13,6 @@ export const PopperContainer = (props: PropType) => {
     if (event.target instanceof Element) {
       props.setSelectedMenu(event.target.id);
     }
-    // if (event.target instanceof Element) {
-    //   console.log(event.target.id);
-    // }
     props.setPopperOpen(false);
   };
 
