@@ -1,10 +1,10 @@
-import React, { Dispatch, SetStateAction } from "react";
+import React from "react";
 import { Popper } from "./Popper";
 
 interface PropType {
-  setInputValue: Dispatch<SetStateAction<string>>;
-  setPopperOpen: Dispatch<SetStateAction<boolean>>;
-  setSelectedMenu: Dispatch<SetStateAction<string>>;
+  setInputValue: React.Dispatch<React.SetStateAction<string>>;
+  setPopperOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setSelectedMenu: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const PopperContainer = (props: PropType) => {
